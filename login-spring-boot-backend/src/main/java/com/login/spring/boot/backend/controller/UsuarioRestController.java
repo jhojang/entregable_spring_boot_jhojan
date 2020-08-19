@@ -1,8 +1,10 @@
 package com.login.spring.boot.backend.controller;
 
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 import com.login.spring.boot.backend.entity.Usuario;
+import com.login.spring.boot.backend.include.EncryptPassword;
 import com.login.spring.boot.backend.services.IUsuarioService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +20,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = {""})
+@CrossOrigin(origins = { "" })
 @RestController
 @RequestMapping("/api")
 public class UsuarioRestController {
-    
+
     @Autowired
     IUsuarioService usuarioService;
 
@@ -50,13 +52,14 @@ public class UsuarioRestController {
 
     @PutMapping("/usuarios/{id}")
     @ResponseStatus(HttpStatus.CREATED)
-    public Usuario update(@PathVariable Integer id, @RequestBody Usuario usuario) {
+    public Usuario update(@PathVariable Integer id, @RequestBody Usuario usuario) throws NoSuchAlgorithmException {
         Usuario usuarioDevuelto = usuarioService.findById(id);
+
         usuarioDevuelto.setUserName(usuario.getUserName());
         usuarioDevuelto.setName(usuario.getName());
         usuarioDevuelto.setLastName(usuario.getLastName());
         usuarioDevuelto.setEmail(usuario.getEmail());
-        usuarioDevuelto.setPassword(usuario.getPassword());
+        usuarioDevuelto.setPassword(EncryptPassword.getMD5(usuario.getPassword()));
         return usuarioService.save(usuarioDevuelto);
     }
 
