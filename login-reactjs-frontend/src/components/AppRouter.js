@@ -8,6 +8,7 @@ import { MainScreen } from './MainScreen';
 import { LoginScreen } from './LoginScreen';
 import { RegisterScreen } from './RegisterScreen';
 import { HomeScreen } from './HomeScreen';
+import './login.css';
 
 export const AppRouter = () => {
   return (
