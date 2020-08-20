@@ -26,11 +26,41 @@ export const RegisterScreen = () => {
         </div>
         <div className="input-list form-section">
           <h1>Registrarse</h1>
-            <input type="text" name="name" placeholder="Nombre" onChange={handleInputChange} value={inputValue.name} />
-            <input type="text" name="lastName" placeholder="Apellido" onChange={handleInputChange} value={inputValue.lastName} />
-            <input type="text" name="userName" placeholder="Nombre de usuario" onChange={handleInputChange} value={inputValue.userName} />
-            <input type="text" name="email" placeholder="correo electrónico" onChange={handleInputChange} value={inputValue.email} />
-            <input type="password" name="password" placeholder="Contraseña" onChange={handleInputChange} value={inputValue.password} />
+            <input
+              type="text" 
+              name="name" 
+              placeholder="Nombre" 
+              onChange={handleInputChange} 
+              value={inputValue.name}
+            />
+            <input 
+              type="text" 
+              name="lastName" 
+              placeholder="Apellido" 
+              onChange={handleInputChange} 
+              value={inputValue.lastName} 
+            />
+            <input 
+              type="text" 
+              name="userName" 
+              placeholder="Nombre de usuario" 
+              onChange={handleInputChange} 
+              value={inputValue.userName} 
+            />
+            <input 
+              type="text" 
+              name="email" 
+              placeholder="correo electrónico" 
+              onChange={handleInputChange} 
+              value={inputValue.email} 
+            />
+            <input 
+              type="password" 
+              name="password" 
+              placeholder="Contraseña" 
+              onChange={handleInputChange} 
+              value={inputValue.password} 
+            />
         </div>
         <div className="input-list form-footer">
           <input type="submit" value="Enviar" />
