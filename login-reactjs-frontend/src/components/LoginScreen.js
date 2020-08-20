@@ -8,7 +8,7 @@ export const LoginScreen = () => {
       <form>
         <div className="form-header">
           <div className="blue-header">
-            <img src={loginIcon} className="img-header"/>
+            <img src={loginIcon} className="img-header" alt="" />
           </div>
         </div>
         <div className="input-list form-section">

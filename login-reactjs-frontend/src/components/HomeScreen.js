@@ -1,6 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
-import { LoginScreen } from './LoginScreen';
 
 export const HomeScreen = () => {
   return (
